@@ -6,5 +6,5 @@ from .models import Company
 
 
 @admin.register(Company)
-class CompanyAdmin(admin.ModelAdmin):
+class CompaniesAdmin(admin.ModelAdmin):
     pass

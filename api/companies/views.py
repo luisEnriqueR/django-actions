@@ -1,3 +1,15 @@
-from django.shortcuts import render
+# DRF
+from rest_framework import viewsets
+from rest_framework.pagination import PageNumberPagination
 
-# Create your views here.
+# Serializers
+from .serializers import CompanySerializer
+
+# Models
+from .models import Company
+
+
+class CompanyViewSet(viewsets.ModelViewSet):
+    serializer_class = CompanySerializer
+    queryset = Company.objects.all().order_by("-last_update")
+    pagination_class = PageNumberPagination
