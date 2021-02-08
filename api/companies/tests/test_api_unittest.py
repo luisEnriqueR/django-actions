@@ -1,3 +1,8 @@
+"""
+Native unittest way to do testing
+will be a second way with pytest
+"""
+
 # Django
 from django.urls import reverse
 from django.test import Client
@@ -71,12 +76,3 @@ class TestPostCompanies(BasicCompanyAPITestCase):
         respose_content = json.loads(response.content)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn("is not a valid choice", str(respose_content))
-
-    @pytest.mark.xfail
-    def test_its_ok_if_fails(self) -> None:
-        # It's ok if it fails because something that its going to be fixed later
-        pass
-
-    @pytest.mark.skip
-    def test_should_be_skiped(self) -> None:
-        pass
