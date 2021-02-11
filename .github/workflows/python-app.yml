@@ -35,3 +35,10 @@ jobs:
       run: |
         # Show the time of running each test
         pytest api/ -s -v --durations=0
+      env:
+        # Testing envs variables
+        SECRET_KEY: -t)*xf^zvx&d^^d0ze@*5kycb!)i_5sxe=3o66%f%$v$gq8-)k
+        EMAIL_PORT: 587
+        EMAIL_HOST: smtp.gmail.com
+        EMAIL_HOST_USER: luis.e.3194@gmail.com
+        EMAIL_HOST_PASSWORD: cufzobswdlygrmyq
